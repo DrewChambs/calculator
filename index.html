@@ -19,8 +19,58 @@
   <body>
     <section class="body">
       <div class="container">
-        <h1 class="calculator-title">Calculator</h1>
+        <!-- Main container -->
+        <!-- <h1 class="calculator-title">Calculator</h1> -->
+
+        <div class="calculator-main">
+          <div class="display">
+            <p class="display__text">465</p>
+          </div>
+          <!-- <div class="calculator"> -->
+          <div class="clear-container">
+            <button class="numberBtn clearBtn" data-id="clear">AC</button>
+            <button class="numberBtn divideBtn operators" data-id="divide">
+              &#247;
+            </button>
+          </div>
+          <div class="low-numbers">
+            <button class="numberBtn" data-id="7">7</button>
+            <button class="numberBtn" data-id="8">8</button>
+            <button class="numberBtn" data-id="9">9</button>
+            <button class="numberBtn multiplyBtn operators" data-id="7">
+              &times;
+            </button>
+          </div>
+          <div class="mid-numbers">
+            <button class="numberBtn" data-id="4">4</button>
+            <button class="numberBtn" data-id="5">5</button>
+            <button class="numberBtn" data-id="6">6</button>
+            <button class="numberBtn minusBtn operators" data-id="7">
+              &minus;
+            </button>
+          </div>
+          <div class="high-numbers">
+            <button class="numberBtn" data-id="1">1</button>
+            <button class="numberBtn" data-id="2">2</button>
+            <button class="numberBtn" data-id="3">3</button>
+            <button class="numberBtn addBtn operators" data-id="add">
+              &plus;
+            </button>
+          </div>
+          <div class="zero-periodBtns">
+            <button class="numberBtn zeroBtn" data-id="0">0</button>
+            <button class="numberBtn period" data-id="period">&period;</button>
+            <button class="numberBtn equalsBtn operators" data-id="equals">
+              &equals;
+            </button>
+          </div>
+          <!-- </div> -->
+
+          <div class="operatorBtns"></div>
+        </div>
       </div>
+
+      <!-- End Main Container -->
     </section>
 
     <!-- JS Link -->

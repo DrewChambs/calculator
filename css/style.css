@@ -8,6 +8,7 @@
 }
 /* General Styles */
 :root {
+  --btnRadius: 20px;
   font-family: "Poppins", sans-serif;
 }
 .body {
@@ -19,12 +20,87 @@ ul {
 a {
   text-decoration: none;
 }
+
+/* Main container */
 .container {
+  display: grid;
+  place-items: center;
   width: 80%;
   margin: 0 auto;
   max-width: 1000px;
 }
-.calculator-title {
-  text-align: center;
-  font-size: 2rem;
+.calculator-main {
+  /* display: flex;
+  flex-direction: column; */
+  border: 20px solid black;
+  background-color: #000;
+  border-radius: 20px;
+  width: 400px;
 }
+/* Typography */
+.display {
+  /* display: flex; */
+  /* justify-content: center; */
+  /* flex-direction: column; */
+  margin: 0 auto;
+  background-color: rgb(56, 53, 53);
+  width: 350px;
+  font-size: 2.5rem;
+  text-align: right;
+  padding: 0.25em;
+  border: 2px solid #000;
+  border-radius: var(--btnRadius);
+  margin-bottom: 0.5em;
+  color: #fff;
+}
+/* Buttons */
+.numberBtn {
+  font-size: 2rem;
+  width: 70px;
+  height: 70px;
+  cursor: pointer;
+  margin: 0.1em;
+  border: 1px solid black;
+  background-color: rgb(121, 167, 204);
+  border-radius: var(--btnRadius);
+}
+.numberBtn:hover {
+  background-color: rgb(163, 151, 151);
+}
+.operators {
+  background-color: orangered;
+}
+.clear-container {
+  display: flex;
+  justify-content: space-between;
+}
+.clearBtn {
+  flex: 3;
+}
+.divideBtn {
+  flex: 1;
+}
+.zero-periodBtns {
+  display: flex;
+}
+.zeroBtn {
+  flex: 2;
+}
+.period {
+  flex: 1;
+}
+.equalsBtn {
+  flex: 1;
+}
+
+.low-numbers,
+.mid-numbers,
+.high-numbers {
+  display: flex;
+}
+.low-numbers *,
+.mid-numbers *,
+.high-numbers * {
+  flex: 1;
+}
+/* Media Query */
