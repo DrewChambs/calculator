@@ -1,0 +1,30 @@
+/* Reset */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+/* General Styles */
+:root {
+  font-family: "Poppins", sans-serif;
+}
+.body {
+  padding: 5em;
+}
+ul {
+  list-style: none;
+}
+a {
+  text-decoration: none;
+}
+.container {
+  width: 80%;
+  margin: 0 auto;
+  max-width: 1000px;
+}
+.calculator-title {
+  text-align: center;
+  font-size: 2rem;
+}
