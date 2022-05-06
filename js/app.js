@@ -1,5 +1,3 @@
-console.log("Test is it working!");
-
 // Variables to hold user numbers
 let firstNum;
 let secondNum;
@@ -9,14 +7,44 @@ let subtractOperator = "subtract";
 let multiplyOperator = "mutiply";
 let divideOperator = "divide";
 let operator = "divide";
+let periodDisplay = ".";
+
+// Select Operator buttons
+const operatorBtn = document.querySelectorAll(".operators");
+// Select Display
+const displayResult = document.querySelector(".display");
+// Select clear button
+const clearBtn = document.querySelector(".clearBtn");
+// Select period
+const periodBtn = document.querySelector(".periodBtn");
+// Select numbers
+const numberBtn = document.querySelectorAll(".numberBtn");
+
+periodBtn.addEventListener("click", () => {
+  displayResult.textContent = `${periodDisplay}`;
+});
+// Clear display
+clearBtn.addEventListener("click", () => {
+  displayResult.textContent = ``;
+});
+// /////////////
+numberBtn.forEach(numbers => {
+  numbers.addEventListener("click", e => {
+    num1 = e.target.dataset.id;
+    displayResult.textContent = `${num1}`;
+  });
+});
 
 /////////  MAIN OPERATOR FUNCTION   /////////////
-
+operatorBtn.forEach(btnOp => {
+  btnOp.addEventListener("click", e => {
+    console.log(e.target.dataset.id);
+  });
+});
 // Operate function calls related function to
 // perform calculations and display results
 // Calls the approprite operator function
 function operate(operator, firstNum, secondNum) {
-  console.log("operator");
   switch (operator) {
     case "add":
       add(firstNum, secondNum);
@@ -28,7 +56,6 @@ function operate(operator, firstNum, secondNum) {
       multiply(firstNum, secondNum);
       break;
     case "divide":
-      console.log("in the switch");
       divide(firstNum, secondNum);
       break;
     default:
