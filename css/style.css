@@ -37,11 +37,9 @@ a {
   border-radius: 20px;
   width: 400px;
 }
+
 /* Typography */
 .display {
-  /* display: flex; */
-  /* justify-content: center; */
-  /* flex-direction: column; */
   margin: 0 auto;
   background-color: rgb(56, 53, 53);
   width: 350px;
@@ -53,6 +51,7 @@ a {
   margin-bottom: 0.5em;
   color: #fff;
 }
+
 /* Buttons */
 .numberBtn {
   font-size: 2rem;
