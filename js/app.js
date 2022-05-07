@@ -4,7 +4,7 @@ let secondNum;
 // Operator variable
 let addOperator = "add";
 let subtractOperator = "subtract";
-let multiplyOperator = "mutiply";
+let multiplyOperator = "multiply";
 let divideOperator = "divide";
 let operator = "divide";
 let periodDisplay = ".";
@@ -15,30 +15,33 @@ const operatorBtn = document.querySelectorAll(".operators");
 const displayResult = document.querySelector(".display");
 // Select clear button
 const clearBtn = document.querySelector(".clearBtn");
-// Select period
-const periodBtn = document.querySelector(".periodBtn");
 // Select numbers
 const numberBtn = document.querySelectorAll(".numberBtn");
 
-periodBtn.addEventListener("click", () => {
-  displayResult.textContent = `${periodDisplay}`;
-});
 // Clear display
 clearBtn.addEventListener("click", () => {
   displayResult.textContent = ``;
 });
-// /////////////
+
+// Main display /////////
 numberBtn.forEach(numbers => {
   numbers.addEventListener("click", e => {
+    let equals = false;
     num1 = e.target.dataset.id;
-    displayResult.textContent = `${num1}`;
+    displayResult.textContent += `${num1}`;
   });
 });
 
 /////////  MAIN OPERATOR FUNCTION   /////////////
 operatorBtn.forEach(btnOp => {
   btnOp.addEventListener("click", e => {
-    console.log(e.target.dataset.id);
+    let operator = e.target.dataset.id;
+    console.log(operator);
+
+    // switch(operator) {
+    //  case "add":
+
+    // }
   });
 });
 // Operate function calls related function to
@@ -65,28 +68,42 @@ function operate(operator, firstNum, secondNum) {
 
 ///////// CALCULATOR FUNCTIONS //////////////////
 
-// add function
-function add(num1, num2) {
-  sum = num1 + num2;
-  console.log(`Result is: ${sum}`);
-}
-// subtract function
-function subtract(num1, num2) {
-  sum = num1 - num2;
-  console.log(`Result is: ${sum}`);
-}
+// Operator functions
+const add = (num1, num2) => {
+  let sum = num1 + num2;
+  console.log(`Add result is: ${sum}`);
+  return sum;
+};
+const subtract = (num1, num2) => {
+  let sum = num1 - num2;
+  console.log(`Subtract result is: ${sum}`);
+  return sum;
+};
+const multiply = (num1, num2) => {
+  let sum = num1 * num2;
+  console.log(`Multply result is: ${sum}`);
+  return sum;
+};
+const divide = (num1, num2) => {
+  let sum = num1 / num2;
+  console.log(`Divide result is: ${sum}`);
+  return sum;
+};
 // multiply function
-function multiply(num1, num2) {
-  sum = num1 * num2;
-  console.log(`Result is: ${sum}`);
-}
+// function multiply(num1, num2) {
+//   sum = num1 * num2;
+//   console.log(`Result is: ${sum}`);
+// }
 // divide function
-function divide(num1, num2) {
-  sum = num1 / num2;
-  console.log(`Result is: ${sum}`);
-}
+// function divide(num1, num2) {
+//   sum = num1 / num2;
+//   console.log(`Result is: ${sum}`);
+// }
 
 // Display Function to show results
 function displayCalculation() {}
 
 operate(divideOperator, 5, 2);
+operate(addOperator, 5, 2);
+operate(subtractOperator, 5, 2);
+operate(multiplyOperator, 5, 2);
