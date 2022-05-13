@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Odin Calculator</title>
 
-    <!-- CSS Link -->
     <link rel="stylesheet" href="./css/style.css" />
 
     <!------- Google Font Link --->
@@ -17,70 +16,42 @@
     />
   </head>
   <body>
-    <section class="body">
-      <div class="container">
-        <!-- Main container -->
-        <!-- <h1 class="calculator-title">Calculator</h1> -->
-
-        <div class="calculator-main">
-          <div class="display">
-            <p class="display__text"></p>
-          </div>
-          <!-- <div class="calculator"> -->
-          <div class="clear-container">
-            <button class="clearBtn" data-id="clear">AC</button>
-            <button class="operatorBtn divideBtn operators" data-id="divide">
-              &#247;
-            </button>
-          </div>
-          <div class="low-numbers">
-            <button class="numberBtn" data-id="7">7</button>
-            <button class="numberBtn" data-id="8">8</button>
-            <button class="numberBtn" data-id="9">9</button>
-            <button class="operatorBtn multiplyBtn operators" data-id="mutiply">
-              &times;
-            </button>
-          </div>
-          <div class="mid-numbers">
-            <button class="numberBtn" data-id="4">4</button>
-            <button class="numberBtn" data-id="5">5</button>
-            <button class="numberBtn" data-id="6">6</button>
-            <button
-              class="operatorBtn subtractBtn operators"
-              data-id="subtract"
-            >
-              &minus;
-            </button>
-          </div>
-          <div class="high-numbers">
-            <button class="numberBtn" data-id="1">1</button>
-            <button class="numberBtn" data-id="2">2</button>
-            <button class="numberBtn" data-id="3">3</button>
-            <button class="operatorBtn addBtn operators" data-id="add">
-              &plus;
-            </button>
-          </div>
-          <div class="zero-period-equalsBtns">
-            <button class="numberBtn zeroBtn" data-id="0">0</button>
-            <button class="numberBtn periodBtn period">.</button>
-            <button class="operatorBtn equalsBtn operators" data-id="equals">
-              &equals;
-            </button>
-          </div>
-          <!-- </div> -->
-
-          <div class="operatorBtns"></div>
+    <div class="container">
+      <div class="calculator">
+        <div class="display">
+          <!-- <p class="display-text"></p> -->
+        </div>
+        <div class="calculator-rows">
+          <button class="operator long-button clearBtn">AC</button>
+          <button class="numbers operator" data-id="÷">÷</button>
+        </div>
+        <div class="calculator-rows">
+          <button class="numbers">7</button>
+          <button class="numbers">8</button>
+          <button class="numbers">9</button>
+          <button class="numbers operator" data-id="x">x</button>
+        </div>
+        <div class="calculator-rows">
+          <button class="numbers">4</button>
+          <button class="numbers">5</button>
+          <button class="numbers">6</button>
+          <button class="numbers operator" data-id="-">-</button>
+        </div>
+        <div class="calculator-rows">
+          <button class="numbers">1</button>
+          <button class="numbers">2</button>
+          <button class="numbers">3</button>
+          <button class="numbers operator" data-id="+">+</button>
+        </div>
+        <div class="calculator-rows">
+          <button class="numbers long-button">0</button>
+          <button class="decimalBtn">.</button>
+          <button class="equalsBtn">=</button>
         </div>
       </div>
-
-      <!-- End Main Container -->
-    </section>
+    </div>
 
     <!-- JS Link -->
     <script src="./js/app.js"></script>
   </body>
 </html>
-
-<!-- <button class="numberBtn periodBtn period" data-id="period">
-              .
-            </button> -->

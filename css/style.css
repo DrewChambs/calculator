@@ -6,111 +6,71 @@
   padding: 0;
   box-sizing: border-box;
 }
-/* General Styles */
 :root {
-  --btnRadius: 20px;
+  --bordRad: 20px;
+}
+body {
   font-family: "Poppins", sans-serif;
 }
-.body {
-  padding: 5em;
-}
-ul {
-  list-style: none;
-}
-a {
-  text-decoration: none;
-}
-
-/* Main container */
 .container {
   display: grid;
   place-items: center;
-  width: 80%;
-  margin: 0 auto;
-  max-width: 1000px;
+  padding: 5em 3em;
 }
-.calculator-main {
-  /* display: flex;
-  flex-direction: column; */
-  border: 20px solid black;
+
+/****** Body Container ******/
+.calculator {
   background-color: #000;
-  border-radius: 20px;
-  width: 400px;
+  border-radius: var(--bordRad);
+  padding: 1.5em 0.5em;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
-/* Typography */
+/******* Display *******/
 .display {
-  margin: 0 auto;
-  background-color: rgb(56, 53, 53);
-  width: 350px;
-  height: 85px;
-  font-size: 2.5rem;
-  text-align: right;
-  padding: 0.25em;
-  border: 2px solid #000;
-  border-radius: var(--btnRadius);
-  margin-bottom: 0.5em;
+  width: 310px;
+  height: 60px;
   color: #fff;
+  font-size: 3rem;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  background-color: rgb(53, 47, 47);
+  margin: 0 auto;
+  margin-bottom: 0.25em;
+  border-radius: 10px;
 }
 
-/* Buttons */
-.numberBtn,
-.operatorBtn,
-.clearBtn,
-.periodBtn {
-  font-size: 2rem;
-  width: 70px;
-  height: 70px;
+/****** Buttons ******/
+.numbers {
+  width: 80px;
+  height: 80px;
   cursor: pointer;
-  margin: 0.1em;
-  border: 1px solid black;
-  background-color: rgb(121, 167, 204);
-  border-radius: var(--btnRadius);
-  color: #000;
+  background-color: steelblue;
+  border-radius: var(--bordRad);
+  border: 2px solid #000;
+  font-size: 2rem;
 }
-.numberBtn:hover {
-  background-color: rgb(163, 151, 151);
-}
-.operators {
-  background-color: orangered;
-}
-.operators:hover {
-  background-color: rgb(214, 206, 202);
-}
-.operators:focus {
-  background-color: lightgray;
-}
-.clear-container {
-  display: flex;
-  justify-content: space-between;
-}
-.clearBtn {
-  flex: 3;
-}
-.divideBtn {
-  flex: 1;
-}
-.zero-period-equalsBtns {
-  display: flex;
-}
-.zeroBtn {
-  flex: 2;
-}
-.period {
-  flex: 1;
-}
+.operator,
+.decimalBtn,
 .equalsBtn {
+  background-color: orangered;
+  width: 80px;
+  height: 80px;
+  cursor: pointer;
+  border-radius: var(--bordRad);
+  border: 2px solid #000;
+  font-size: 2rem;
+}
+.calculator-rows {
+  display: flex;
+  margin: 0.25em;
+  gap: 0.25em;
+}
+.long-button {
   flex: 1;
 }
 
-.low-numbers,
-.mid-numbers,
-.high-numbers {
-  display: flex;
-}
-.low-numbers *,
-.mid-numbers *,
-.high-numbers * {
-  flex: 1;
-}
-/* Media Query */
+/*** Media ***/
