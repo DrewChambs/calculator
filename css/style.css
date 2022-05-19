@@ -84,6 +84,7 @@ a {
   border-radius: var(--bordRad);
   border: 2px solid #000;
   font-size: 2rem;
+  color: #000;
 }
 .numbers:hover,
 .decimalBtn:hover {
@@ -100,6 +101,7 @@ a {
   border-radius: var(--bordRad);
   border: 2px solid #000;
   font-size: 2rem;
+  color: #000;
 }
 .operator:hover,
 .equalsBtn:hover,
