@@ -1,115 +1,136 @@
-// Number Buttons
 const numberBtn = document.querySelectorAll(".numbers");
-// Main display
-const displayCalculator = document.querySelector(".display");
-const equalsBtn = document.querySelector(".equalsBtn");
-// Clear
 const clearBtn = document.querySelector(".clearBtn");
-// Array
-const operatorArray = ["+", "÷", "-", "x"];
+const operatorBtn = document.querySelectorAll(".operator");
+const equalsBtn = document.querySelector(".equalsBtn");
+const decimalBtn = document.querySelector(".decimalBtn");
+const deleteBtn = document.querySelector(".deleteBtn");
 
-// Number variables
-let firstNum = "";
-let secondNum = "";
+// Number capture/display
+const currentOperand = document.querySelector(".current-operand");
+const previousOperand = document.querySelector(".previous-operand");
+
+let previousNum = "";
+let currentNum = "";
 let operator = "";
-let displayNum;
-let sum = "";
+let result = "";
+let num = "";
 
-// Numbers ************
-numberBtn.forEach(numbers => {
-  numbers.addEventListener("click", e => {
-    displayNum = e.target.innerText;
-    const symbolInArray = operatorArray.includes(displayNum);
-    displayCalculator.innerText += displayNum;
+// Numbers
+numberBtn.forEach(button => {
+  button.addEventListener("click", e => {
+    currentNum = e.target.innerText;
+    if (currentNum === "." && currentOperand.innerText.includes(".")) return;
+    currentOperand.innerText += currentNum;
+  });
+});
 
-    if (firstNum && symbolInArray) {
-      operator = displayNum;
-    } else if (!operator) {
-      firstNum += displayNum;
-      console.log(` The first number is: ${firstNum}`);
-    } else if (operator) {
-      secondNum += displayNum;
-      if (secondNum) {
-        operate();
-      }
-      console.log(`The second number is: ${secondNum}`);
+// Operators
+operatorBtn.forEach(item => {
+  item.addEventListener("click", e => {
+    if (currentNum != "" && previousNum != "") {
+      operate();
     }
+    if (currentNum === "") return;
+    operator = item.innerText;
+    previousOperand.innerText = currentOperand.innerText;
+    previousNum = currentNum;
+    currentOperand.innerText = "";
   });
 });
 
 // Equals
-equalsBtn.addEventListener("click", operator => {
+equalsBtn.addEventListener("click", () => {
   operate();
-  // firstNum = displayCalculator.innerText;
-  firstNum = displayCalculator.innerText;
-  secondNum = "";
-  symbolInArray = "";
 });
 
-// Clear display
-clearBtn.addEventListener("click", () => {
-  displayCalculator.innerText = "";
-  // firstNum.innerText = "";
-  // secondNum.innerText = "";
-  firstNum = "";
-  secondNum = "";
-});
-
-// Operate Function
+// Calculations
 const operate = () => {
+  currentNum = parseFloat(currentOperand.innerText);
+  previousNum = parseFloat(previousOperand.innerText);
+  if (isNaN(previousNum) || isNaN(currentNum)) return;
   switch (operator) {
     case "+":
-      add(firstNum, secondNum);
-      break;
-    case "-":
-      subtract(firstNum, secondNum);
+      displayResults(add(previousNum, currentNum));
       break;
     case "x":
-      multiply(firstNum, secondNum);
+      displayResults(multiply(previousNum, currentNum));
+      break;
+    case "-":
+      displayResults(subtract(previousNum, currentNum));
       break;
     case "÷":
-      divide(firstNum, secondNum);
+      displayResults(divide(previousNum, currentNum));
       break;
     default:
-      console.log("Nothing to calculate!");
+      return;
   }
-  firstNum = sum;
-  secondNum = "";
-  symbolInArray = "";
+  // currentOperand.innerText = result;
+  // previousNum = result;
+  // currentNum = "";
+  operator = undefined;
+  previousNum = result;
+  previousOperand.innerText = "";
 };
 
-// Calculation Functions
-const add = (firstNum, secondNum) => {
-  firstNum = parseInt(firstNum);
-  secondNum = parseInt(secondNum);
-  sum = firstNum + secondNum;
-  console.log(sum);
-  firstNum = "";
-  secondNum = "";
-  console.log(`The first num is now: ${sum}`);
-  return (displayCalculator.innerText = sum);
+// Display
+const displayResults = result => {
+  return (currentOperand.innerText = result);
 };
-const subtract = (firstNum, secondNum) => {
-  firstNum = parseFloat(firstNum);
-  secondNum = parseFloat(secondNum);
-  sum = firstNum - secondNum;
-  console.log(sum);
-  return (displayCalculator.innerText = sum);
+previousOperand.innerText = "";
+
+// Operator functions
+const add = (previousNum, currentNum) => {
+  result = previousNum + currentNum;
+  console.log(result);
+  result = result.toString();
+  if (result.length > 8) {
+    return Number.parseFloat(result).toFixed(6);
+  } else {
+    return result;
+  }
 };
-const multiply = (firstNum, secondNum) => {
-  firstNum = parseFloat(firstNum);
-  secondNum = parseFloat(secondNum);
-  sum = firstNum * secondNum;
-  console.log(sum);
-  return (displayCalculator.innerText = sum);
+const subtract = () => {
+  result = previousNum - currentNum;
+  console.log(result);
+  result = result.toString();
+  if (result.length > 8) {
+    return Number.parseFloat(result).toFixed(6);
+  } else {
+    return result;
+  }
 };
-const divide = (firstNum, secondNum) => {
-  firstNum = parseFloat(firstNum);
-  secondNum = parseFloat(secondNum);
-  sum = firstNum / secondNum;
-  console.log(sum);
-  return (displayCalculator.innerText = sum);
+const multiply = () => {
+  result = previousNum * currentNum;
+  console.log(result);
+  result = result.toString();
+  if (result.length > 8) {
+    return Number.parseFloat(result).toFixed(6);
+  } else {
+    return result;
+  }
+};
+const divide = () => {
+  result = previousNum / currentNum;
+  console.log(result);
+
+  result = result.toString();
+  if (result.length > 8) {
+    return Number.parseFloat(result).toFixed(8);
+  } else {
+    return result;
+  }
 };
 
-// Display Function
-const displayResult = () => {};
+// Clear
+clearBtn.addEventListener("click", () => {
+  currentNum = "";
+  previousNum = "";
+  previousOperand.innerText = "";
+  currentOperand.innerText = "";
+  operator = undefined;
+});
+
+// Delete
+deleteBtn.addEventListener("click", () => {
+  currentOperand.innerText = currentOperand.innerText.toString().slice(0, -1);
+});

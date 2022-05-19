@@ -6,21 +6,45 @@
   padding: 0;
   box-sizing: border-box;
 }
+
+/* General Styles */
 :root {
   --bordRad: 20px;
 }
 body {
   font-family: "Poppins", sans-serif;
+  background-color: rgb(190, 180, 180);
 }
 .container {
   display: grid;
   place-items: center;
   padding: 5em 3em;
+  margin: 0 auto;
+}
+.nav {
+  margin-bottom: 1em;
+}
+ul {
+  list-style-type: none;
+}
+a {
+  text-decoration: none;
+  color: #000;
+  text-transform: capitalize;
+}
+
+/***** Navigation ******/
+.links {
+  display: flex;
+}
+.links-list {
+  margin-right: 0.5em;
 }
 
 /****** Body Container ******/
 .calculator {
-  background-color: #000;
+  /* background-color: #000; */
+  background-color: rgb(29, 21, 21);
   border-radius: var(--bordRad);
   padding: 1.5em 0.5em;
   display: flex;
@@ -30,39 +54,67 @@ body {
 
 /******* Display *******/
 .display {
-  width: 310px;
-  height: 60px;
+  width: 240px;
+  height: 90px;
   color: #fff;
-  font-size: 3rem;
+  font-size: 1.75rem;
   display: flex;
-  align-items: center;
+  align-items: flex-end;
   justify-content: flex-end;
+  flex-direction: column;
   background-color: rgb(53, 47, 47);
   margin: 0 auto;
   margin-bottom: 0.25em;
   border-radius: 10px;
+  padding: 0.5em;
+}
+.previous-operand {
+  font-size: 1rem;
+}
+.current-operand {
+  height: 80px;
 }
 
 /****** Buttons ******/
-.numbers {
-  width: 80px;
-  height: 80px;
+.numbers,
+.decimalBtn {
+  width: 60px;
+  height: 60px;
   cursor: pointer;
   background-color: steelblue;
   border-radius: var(--bordRad);
   border: 2px solid #000;
   font-size: 2rem;
 }
+.numbers:hover,
+.decimalBtn:hover {
+  background-color: #fff;
+}
 .operator,
-.decimalBtn,
-.equalsBtn {
+.equalsBtn,
+.clearBtn,
+.deleteBtn {
   background-color: orangered;
-  width: 80px;
-  height: 80px;
+  width: 60px;
+  height: 60px;
   cursor: pointer;
   border-radius: var(--bordRad);
   border: 2px solid #000;
   font-size: 2rem;
+}
+.operator:hover,
+.equalsBtn:hover,
+.clearBtn:hover,
+.deleteBtn:hover {
+  background-color: rgb(146, 137, 134);
+}
+.operator:focus,
+.equalsBtn:focus {
+  background-color: rgb(235, 191, 177);
+}
+.deleteBtn {
+  font-size: 0.9rem;
+  font-weight: 900;
 }
 .calculator-rows {
   display: flex;
@@ -74,3 +126,8 @@ body {
 }
 
 /*** Media ***/
+@media (max-width: 300px) {
+  .calculator {
+    width: 100%;
+  }
+}
