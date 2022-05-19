@@ -14,13 +14,10 @@
 body {
   font-family: "Poppins", sans-serif;
   background-color: rgb(190, 180, 180);
+  padding: 3em 0;
 }
-
-/* Main Body */
 .container {
-  display: grid;
-  place-items: center;
-  padding: 5em 3em;
+  width: 290px;
   margin: 0 auto;
 }
 .nav {
@@ -87,7 +84,6 @@ a {
   border-radius: var(--bordRad);
   border: 2px solid #000;
   font-size: 2rem;
-  color: #000;
 }
 .numbers:hover,
 .decimalBtn:hover {
@@ -104,7 +100,6 @@ a {
   border-radius: var(--bordRad);
   border: 2px solid #000;
   font-size: 2rem;
-  color: #000;
 }
 .operator:hover,
 .equalsBtn:hover,
@@ -125,8 +120,11 @@ a {
   margin: 0.25em;
   gap: 0.25em;
 }
-.long-button {
+.calculator-rows * {
   flex: 1;
+}
+.long-button {
+  flex: 2;
 }
 
 /*** Media ***/
