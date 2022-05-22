@@ -31,11 +31,12 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  width: 320px;
 }
 
 /******* Display *******/
 .display {
-  width: 300px;
+  width: 290px;
   height: 90px;
   color: #fff;
   font-size: 1.75rem;
