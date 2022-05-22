@@ -17,27 +17,9 @@ body {
   padding: 3em 0;
 }
 .container {
-  width: 290px;
+  width: 350px;
+  max-width: 400px;
   margin: 0 auto;
-}
-.nav {
-  margin-bottom: 1em;
-}
-ul {
-  list-style-type: none;
-}
-a {
-  text-decoration: none;
-  color: #000;
-  text-transform: capitalize;
-}
-
-/***** Navigation ******/
-.links {
-  display: flex;
-}
-.links-list {
-  margin-right: 0.5em;
 }
 
 /****** Body Container ******/
@@ -53,7 +35,7 @@ a {
 
 /******* Display *******/
 .display {
-  width: 240px;
+  width: 300px;
   height: 90px;
   color: #fff;
   font-size: 1.75rem;
@@ -130,8 +112,8 @@ a {
 }
 
 /*** Media ***/
-@media (max-width: 300px) {
+/* @media (max-width: 300px) {
   .calculator {
     width: 100%;
   }
-}
+} */
