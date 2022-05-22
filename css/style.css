@@ -31,12 +31,11 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  width: 320px;
 }
 
 /******* Display *******/
 .display {
-  width: 290px;
+  width: 300px;
   height: 90px;
   color: #fff;
   font-size: 1.75rem;
@@ -113,8 +112,8 @@ body {
 }
 
 /*** Media ***/
-/* @media (max-width: 300px) {
+@media (max-width: 300px) {
   .calculator {
     width: 100%;
   }
-} */
+}
