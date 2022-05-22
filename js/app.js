@@ -64,9 +64,6 @@ const operate = () => {
     default:
       return;
   }
-  // currentOperand.innerText = result;
-  // previousNum = result;
-  // currentNum = "";
   operator = undefined;
   previousNum = result;
   previousOperand.innerText = "";
@@ -81,7 +78,6 @@ previousOperand.innerText = "";
 // Operator functions
 const add = (previousNum, currentNum) => {
   result = previousNum + currentNum;
-  console.log(result);
   result = result.toString();
   if (result.length > 8) {
     return Number.parseFloat(result).toFixed(6);
@@ -91,7 +87,6 @@ const add = (previousNum, currentNum) => {
 };
 const subtract = () => {
   result = previousNum - currentNum;
-  console.log(result);
   result = result.toString();
   if (result.length > 8) {
     return Number.parseFloat(result).toFixed(6);
@@ -101,7 +96,6 @@ const subtract = () => {
 };
 const multiply = () => {
   result = previousNum * currentNum;
-  console.log(result);
   result = result.toString();
   if (result.length > 8) {
     return Number.parseFloat(result).toFixed(6);
@@ -111,8 +105,6 @@ const multiply = () => {
 };
 const divide = () => {
   result = previousNum / currentNum;
-  console.log(result);
-
   result = result.toString();
   if (result.length > 8) {
     return Number.parseFloat(result).toFixed(8);
