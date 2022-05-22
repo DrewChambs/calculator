@@ -106,6 +106,9 @@ const multiply = () => {
 const divide = () => {
   result = previousNum / currentNum;
   result = result.toString();
+  if (currentNum === 0) {
+    return (previousOperand.innerText = "Zero No Go!");
+  }
   if (result.length > 8) {
     return Number.parseFloat(result).toFixed(8);
   } else {
